@@ -3,6 +3,13 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Cairo', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 button {
@@ -11,48 +18,76 @@ button {
     background-color: #e01010;
     color: #fff;
     border: none;
-    padding: 10px;
-    width: 100%; 
-    max-width: 300px; 
-    transition: all 0.5s ease-in-out;
+    padding: 15px;
+    width: 100%;
+    max-width: 350px;
+    transition: all 0.3s ease-in-out;
     font-size: 2.5vh;
     cursor: pointer;
-    height: 52px;
-    margin: 10px auto; 
+    height: 65px;
+    margin: 20px auto;
     display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 button:hover {
     background-color: #fff;
     color: #e01010;
-    border: 1px solid #e01010;
+    border: 2px solid #e01010;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+button:active {
+    transform: translateY(1px);
 }
 
 .form {
     position: relative;
-    width: 100%; 
-    max-width: 400px; 
-    margin: 10vh auto; 
-    padding: 20px;
-    text-align: relative;
+    width: 100%;
+    max-width: 450px;
+    margin: 10vh auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.form:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 input {
     font-family: 'Cairo', sans-serif;
-    padding: 10px;
-    width: 100%; 
-    max-width: 300px;
-    font-size: 2.5vh;
+    padding: 15px;
+    width: 100%;
+    max-width: 350px;
+    font-size: 3vh;
     border: 1px solid #e01010;
     color: #e01010;
     outline: none;
     font-weight: bold;
     margin-bottom: 20px;
     box-sizing: border-box;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #e01010;
+    box-shadow: 0 0 10px rgba(224, 16, 16, 0.7);
+    transform: translateY(-2px);
 }
 
 ::placeholder {
     color: #e01010;
+    opacity: 0.8;
+    font-style: italic;
 }
 
 div {
@@ -60,7 +95,28 @@ div {
     color: #e01010;
     font-weight: bold;
     font-size: 2.5vh;
-    margin-top: 10px;
-    word-wrap: break-word; 
-    text-align: center; 
+    margin-top: 20px;
+    word-wrap: break-word;
+    text-align: center;
+    line-height: 1.0;
+}
+
+@media (max-width: 600px) {
+    .form {
+        padding: 20px;
+    }
+
+    input,
+    button {
+        font-size: 4vh;
+    }
+
+    div {
+        font-size: 3vh;
+    }
+
+    input,
+    button {
+        max-width: 280px;
+    }
 }

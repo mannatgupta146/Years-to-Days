@@ -1,29 +1,33 @@
-/*global console, alert, prompt*/
 function yearsToDays() {
     'use strict';
-    var
-        a = document.getElementById('name').value,
-        r = a * 365,
-        m = document.getElementById('div');
-    if (a === "") {
-        m.innerHTML = "Please don't joke around, just write your age.";
-    } else if (a === "My dear, thank you") {
-        m.innerHTML = "You're welcome, no worries.";
-    } else if (a === "Buddy" || a === "My friend" || a === "Chief" || a === "My brother" || a === "Boss") {
-        m.innerHTML = "What’s up, boss? What do you need?";
-    } else if (a === "I don't want to write, man" || a === "I don't want to write, buddy" || a === "I don't want to write, my friend" || a === "I don't want to write, chief" || a === "I don't want to write" || a === "I don't want to write, boss" || a === "I don't want to write, my brother") {
-        m.innerHTML = "Come on, don't make me angry. I'm being nice; don't make me call Madam Afaf, alright?";
-    } else if (isNaN(a)) {
-        m.innerHTML = "I'm asking for your age, not your name. Please understand.";
-    } else if (a < 0) {
-        m.innerHTML = "You're not from the past, write your current age.";
-    } else if (a == 0) {
-        m.innerHTML = "Be born first and then come talk to me.";
-    } else if (a >= 100) {
-        m.innerHTML = "You should be asking how many hours you'll live. Move on, please.";
-    } else if (a <= 9) {
-        m.innerHTML = "Go on, kiddo. Your mom is calling you.";
-    } else {
-        m.innerHTML = "You have lived approximately " + r + " days. Anything else you need?";
+    
+    var age = document.getElementById('name').value.trim(),
+        days = age * 365,
+        messageDiv = document.getElementById('div');
+    
+    if (age === "") {
+        messageDiv.innerHTML = "Come on, don’t be shy! Just tell me your age.";
+    } else if (isNaN(age)) {
+        messageDiv.innerHTML = "I asked for your age, not your life story! Enter a number.";
+    } else if (age < 0) {
+        messageDiv.innerHTML = "Negative age? Are you a time traveler?";
+    } else if (age == 0) {
+        messageDiv.innerHTML = "You need to be born first, buddy. Try again later.";
+    } else if (age <= 15) {
+        messageDiv.innerHTML = days + " days, kiddo? Go back to your cartoons. This is for grown-ups.";
+    } else if (age >= 16 && age <= 30) {
+        messageDiv.innerHTML = days + " days? So it’s time to do something in your life! Go for it!";
+    } else if (age >= 31 && age <= 49) {
+        messageDiv.innerHTML = days + " days? Aha, married? How’s that going? Life in full swing!";
+    } else if (age == 50) {
+        messageDiv.innerHTML = "Wow, half a century lived! That's a lot of wisdom!";
+    } else if (age >= 51 && age <= 70) {
+        messageDiv.innerHTML = days + " days? Just getting old, huh? So yeah, survive more!";
+    } else if (age >= 71 && age <= 99) {
+        messageDiv.innerHTML = days + " days? You're alive! Still not dead? Shocked!";
+    } else if (age == 100) {
+        messageDiv.innerHTML = "A century! Are you serious? Is this real?";
+    } else if (age > 100) {
+        messageDiv.innerHTML = "Wow! " + days + " days, Are you a vampire or something? That’s ancient!";
     }
 }
